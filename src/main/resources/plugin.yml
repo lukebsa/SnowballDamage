@@ -1,0 +1,8 @@
+name: SnowballDamage
+version: ${project.version}
+main: org.esmp.snowballdamage.SnowballDamage
+api-version: 1.16
+prefix: [ Snowball Damage ]
+load: STARTUP
+authors: [ luke ]
+description: A simple plugin to add damage to snowballs for the ESMP server winter season of 2020.
