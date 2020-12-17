@@ -36,4 +36,12 @@ public final class SnowballDamage extends JavaPlugin implements Listener {
         Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "SnowballDamage Version " + getDescription().getVersion() + ChatColor.GREEN + " disabled!");
         this.logger.info("Snowball Damage Disabled");
     }
+
+    @EventHandler(priority = EventPriority.NORMAL)
+    public void onEntityHit(EntityDamageByEntityEvent e) {
+        if (e.getDamager() instanceof org.bukkit.entity.Snowball) {
+            e.setDamage(getConfig().getDouble("Snowballs.Damage"));
+            e.getEntity().getWorld().playEffect(e.getEntity().getLocation(), Effect.STEP_SOUND, 80, 1);
+        }
+    }
 }
